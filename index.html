@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naresh Enterprises – Hygiene, Cleaning Supplies & Pharmacy</title>
+    <meta name="description" content="Naresh Enterprises - Wholesale & Retail supplier of Phenyl, Washing Acid, Handwash, Colin, Harpic, Mop, Odonil, Paracetamol, Gloves, Dusters and Cleaning Supplies in Nanded." />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+    <!-- Notification Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Header Section -->
+    <header id="mainHeader" class="header">
+        <!-- Top Announcement Bar -->
+        <div class="announcement-bar">
+            <div class="container announcement-inner">
+                <span data-en="<i class='fas fa-truck-medical'></i> Free Delivery on Bulk Orders above ₹500!" data-mr="<i class='fas fa-truck-medical'></i> ₹५०० पेक्षा जास्त ऑर्डरवर मोफत डिलिव्हरी!"><i class="fas fa-truck-medical"></i> Free Delivery on Bulk Orders above ₹500!</span>
+                <div class="top-links">
+                    <!-- Language Selector Icon & Dropdown -->
+                    <div class="lang-selector">
+                        <i class="fas fa-globe"></i>
+                        <select id="langSelect" aria-label="Select Language">
+                            <option value="en">English (EN)</option>
+                            <option value="mr">मराठी (MR)</option>
+                        </select>
+                    </div>
+
+                    <a href="contact.html"><i class="fas fa-envelope"></i> <span data-en="Contact Us" data-mr="संपर्क करा">Contact Us</span></a>
+                    <span class="top-address"><i class="fas fa-location-dot"></i> H. No.34/B. No.31, L.H. Colony, Beside Govt. ITI, Nanded</span>
+                    <a href="tel:9822311640"><i class="fas fa-phone"></i> 9822311640, 70203176065</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Nav Header -->
+        <div class="top-nav container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-pump-soap"></i></div>
+                <div class="logo-text">Naresh <span>Enterprises</span></div>
+            </a>
+
+            <div class="search-bar">
+                <select class="search-category" id="searchCategorySelect" aria-label="Select Category">
+                    <option data-en="All Products" data-mr="सर्व उत्पादने">All Products</option>
+                    <option data-en="Disinfectants & Phenyl" data-mr="फिनईल आणि डिस्इन्फेक्टंट">Disinfectants & Phenyl</option>
+                    <option data-en="Cleaning Chemicals" data-mr="स्वच्छता रसायने">Cleaning Chemicals</option>
+                    <option data-en="Handwash & Soap" data-mr="हँडवॉश आणि साबण">Handwash & Soap</option>
+                    <option data-en="Mops & Dusters" data-mr="मॉप आणि डस्टर">Mops & Dusters</option>
+                    <option data-en="Medical Supplies" data-mr="वैद्यकीय साहित्य">Medical Supplies</option>
+                </select>
+                <input type="text" placeholder="Search Phenyl, Harpic, Colin, Handwash, Gloves..." data-en-ph="Search Phenyl, Harpic, Colin, Handwash, Gloves..." data-mr-ph="फिनईल, हार्पिक, कॉलिन, हँडवॉश, हातमोजे शोधा..." id="searchInput" autocomplete="off" />
+                <button id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="account-icons">
+                <a href="tel:9822311640" class="nav-icon-item" title="Call Now">
+                    <i class="fas fa-phone-volume"></i>
+                    <span class="icon-label" data-en="Call Now" data-mr="कॉल करा">Call Now</span>
+                </a>
+                <a href="#" class="nav-icon-item" id="wishlistIcon" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="badge-count" id="wishlistCount">0</span>
+                    <span class="icon-label" data-en="Wishlist" data-mr="इच्छामूर्ती">Wishlist</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Secondary Category Navigation -->
+        <nav class="secondary-nav">
+            <div class="container nav-wrapper">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> <span data-en="Home" data-mr="मुख्यपृष्ठ">Home</span></a></li>
+                    <li><a href="about.html" class="nav-link"><i class="fas fa-circle-info"></i> <span data-en="About Us" data-mr="आमच्याबद्दल">About Us</span></a></li>
+                    <li><a href="#trending" class="nav-link"><i class="fas fa-flask"></i> <span data-en="Phenyl & Acid" data-mr="फिनईल आणि अ‍ॅसिड">Phenyl & Acid</span></a></li>
+                    <li><a href="#trending" class="nav-link"><i class="fas fa-hand-holding-droplet"></i> <span data-en="Handwash" data-mr="हँडवॉश">Handwash</span></a></li>
+                    <li><a href="#trending" class="nav-link"><i class="fas fa-spray-can"></i> <span data-en="Colin & Harpic" data-mr="कॉलिन आणि हार्पिक">Colin & Harpic</span></a></li>
+                    <li><a href="#best-selling" class="nav-link"><i class="fas fa-mattress-pillow"></i> <span data-en="Mop & Duster" data-mr="मॉप आणि डस्टर">Mop & Duster</span></a></li>
+                    <li><a href="contact.html" class="nav-link"><i class="fas fa-address-book"></i> <span data-en="Contact Us" data-mr="संपर्क करा">Contact Us</span></a></li>
+                </ul>
+                <a href="tel:9822311640" class="rx-upload-btn"><i class="fas fa-phone-alt"></i> <span data-en="Quick Order" data-mr="झटपट ऑर्डर">Quick Order</span></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="container hero-container">
+            <div class="hero-left">
+                <div class="hero-tag" data-en="<i class='fas fa-shield-halved'></i> Naresh Enterprises – Nanded's Trusted Chemical Supplier" data-mr="<i class='fas fa-shield-halved'></i> नरेश एंटरप्रायझेस – नांदेडमधील विश्वासू पुरवठादार"><i class="fas fa-shield-halved"></i> Naresh Enterprises – Nanded's Trusted Chemical Supplier</div>
+                <h1 data-en="High-Quality Cleaning, <span>Hygiene</span> & Medical Supplies" data-mr="उच्च दर्जाचे स्वच्छता, <span>हायजीन</span> आणि मेडिकल साहित्य">High-Quality Cleaning, <span>Hygiene</span> & Medical Supplies</h1>
+                <p data-en="Order premium Phenyl, Washing Acid, Handwash Liquid, Colin, Harpic, Mops, Odonil, Paracetamol, Gloves, and Floor Dusters at wholesale & retail prices in Nanded." data-mr="नांदेडमध्ये घाऊक आणि किरकोळ दरात उच्च दर्जाचे फिनईल, वॉशिंग अ‍ॅसिड, हँडवॉश, कॉलिन, हार्पिक, मॉप, ओडोनिल, पॅरासिटामॉल, हातमोजे आणि फ्लोअर डस्टर ऑर्डर करा.">Order premium Phenyl, Washing Acid, Handwash Liquid, Colin, Harpic, Mops, Odonil, Paracetamol, Gloves, and Floor Dusters at wholesale & retail prices in Nanded.</p>
+                
+                <div class="hero-buttons">
+                    <a href="tel:9822311640" class="btn btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Call to Order" data-mr="कॉल करून ऑर्डर करा">Call to Order</span></a>
+                    <a href="contact.html" class="btn btn-secondary"><i class="fas fa-boxes-packing"></i> <span data-en="Bulk Inquiry" data-mr="घाऊक चौकशी">Bulk Inquiry</span></a>
+                </div>
+
+                <div class="hero-trust-badges">
+                    <div class="trust-item">
+                        <i class="fas fa-users-line"></i>
+                        <div>
+                            <strong>5,000+</strong>
+                            <span data-en="Satisfied Clients" data-mr="समाधानी ग्राहक">Satisfied Clients</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <strong>100%</strong>
+                            <span data-en="Quality Assured" data-mr="दर्जेदार माल">Quality Assured</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-truck-ramp-box"></i>
+                        <div>
+                            <strong data-en="Same Day" data-mr="एकाच दिवशी">Same Day</strong>
+                            <span data-en="Nanded Delivery" data-mr="नांदेड डिलिव्हरी">Nanded Delivery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-slider" id="heroSlider">
+                    <!-- Slide 1 -->
+                    <div class="slide glass active">
+                        <div class="slide-badge">-30% OFF</div>
+                        <img src="https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=500&q=80" alt="White Disinfectant Phenyl" />
+                        <div class="slide-content">
+                            <h3 data-en="Disinfectant White Phenyl 5 Litre" data-mr="डिस्इन्फेक्टंट व्हाईट फिनईल ५ लिटर">Disinfectant White Phenyl 5 Litre</h3>
+                            <p data-en="Deep cleaning formula with pleasant fragrance & 99.9% germ protection." data-mr="सुगंधित आणि ९९.९% जंतूनाशक स्वच्छता फॉर्म्युला.">Deep cleaning formula with pleasant fragrance & 99.9% germ protection.</p>
+                            <div class="slide-price"><span class="old-price">₹350</span> <span class="new-price">₹249</span></div>
+                            <a href="tel:9822311640" class="btn btn-sm btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Order Now" data-mr="ऑर्डर करा">Order Now</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide glass">
+                        <div class="slide-badge">BEST VALUE</div>
+                        <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=500&q=80" alt="Harpic & Colin Hygiene Combo" />
+                        <div class="slide-content">
+                            <h3 data-en="Harpic 1L + Colin 500ml Combo" data-mr="हार्पिक १ लिटर + कॉलिन ५०० मिली combo">Harpic 1L + Colin 500ml Combo</h3>
+                            <p data-en="Complete bathroom & glass cleaning solution pack." data-mr="संपूर्ण बाथरुम आणि काच स्वच्छतेचा कॉम्बो पॅक.">Complete bathroom & glass cleaning solution pack.</p>
+                            <div class="slide-price"><span class="old-price">₹365</span> <span class="new-price">₹269</span></div>
+                            <a href="tel:9822311640" class="btn btn-sm btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Order Now" data-mr="ऑर्डर करा">Order Now</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide glass">
+                        <div class="slide-badge">BULK SAVINGS</div>
+                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=500&q=80" alt="Surgical Gloves & Paracetamol" />
+                        <div class="slide-content">
+                            <h3 data-en="Examination Gloves + Paracetamol Box" data-mr="मेडिकल हातमोजे + पॅरासिटामॉल बॉक्स">Examination Gloves + Paracetamol Box</h3>
+                            <p data-en="100 Pcs Latex Gloves + 15 Strips Paracetamol 650mg." data-mr="१०० लॅटेक्स हातमोजे + १५ स्ट्रिप्स पॅरासिटामॉल ६५०मिग्रॅ.">100 Pcs Latex Gloves + 15 Strips Paracetamol 650mg.</p>
+                            <div class="slide-price"><span class="old-price">₹600</span> <span class="new-price">₹480</span></div>
+                            <a href="tel:9822311640" class="btn btn-sm btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Order Now" data-mr="ऑर्डर करा">Order Now</span></a>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="prev" id="heroPrev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+                        <button class="next" id="heroNext" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="dots" id="heroDots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features-section">
+        <div class="container features-grid">
+            <div class="feature-card glass">
+                <div class="feature-icon"><i class="fas fa-truck-fast"></i></div>
+                <div class="feature-text">
+                    <h3 data-en="Fast Local Delivery" data-mr="जलद स्थानिक डिलिव्हरी">Fast Local Delivery</h3>
+                    <p data-en="Prompt delivery across Nanded City & nearby areas." data-mr="नांदेड शहर आणि परिसरात त्वरीत डिलिव्हरी.">Prompt delivery across Nanded City & nearby areas.</p>
+                </div>
+            </div>
+            <div class="feature-card glass">
+                <div class="feature-icon"><i class="fas fa-shield-check"></i></div>
+                <div class="feature-text">
+                    <h3 data-en="100% Genuine Quality" data-mr="१००% अस्सल गुणवत्ता">100% Genuine Quality</h3>
+                    <p data-en="Direct supply of authentic chemicals & brands." data-mr="थेट उत्पादकांकडून अस्सल मालाचा पुरवठा.">Direct supply of authentic chemicals & brands.</p>
+                </div>
+            </div>
+            <div class="feature-card glass">
+                <div class="feature-icon"><i class="fas fa-tags"></i></div>
+                <div class="feature-text">
+                    <h3 data-en="Wholesale Discounts" data-mr="घाऊक सूट आणि दर">Wholesale Discounts</h3>
+                    <p data-en="Special discounted rates for bulk & corporate orders." data-mr="मोठ्या ऑर्डर्ससाठी विशेष सवलतीचे दर.">Special discounted rates for bulk & corporate orders.</p>
+                </div>
+            </div>
+            <div class="feature-card glass">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <div class="feature-text">
+                    <h3 data-en="Direct Call Ordering" data-mr="थेट कॉल करून ऑर्डर">Direct Call Ordering</h3>
+                    <p data-en="Order directly via call at 9822311640." data-mr="९८२२३११६४० या क्रमांकावर थेट कॉल करा.">Order directly via call at 9822311640.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title" data-en="Explore Categories" data-mr="श्रेणीनुसार शोधा">Explore Categories</span>
+                <h2 class="section-title" data-en="Shop Products By Category" data-mr="श्रेणीनुसार उत्पादने खरेदी करा">Shop Products By Category</h2>
+            </div>
+            <div class="category-grid">
+                <a href="#trending" class="category-card glass">
+                    <div class="cat-icon"><i class="fas fa-flask"></i></div>
+                    <h3 data-en="Phenyl & Acids" data-mr="फिनईल आणि अ‍ॅसिड">Phenyl & Acids</h3>
+                    <span data-en="White & Black Phenyl" data-mr="व्हाईट आणि ब्लॅक फिनईल">White & Black Phenyl</span>
+                </a>
+                <a href="#trending" class="category-card glass">
+                    <div class="cat-icon"><i class="fas fa-hand-holding-droplet"></i></div>
+                    <h3 data-en="Handwash Liquid" data-mr="हँडवॉश लिक्विड">Handwash Liquid</h3>
+                    <span data-en="500ml & 5L Refills" data-mr="५०० मिली आणि ५ लिटर रिफिल">500ml & 5L Refills</span>
+                </a>
+                <a href="#trending" class="category-card glass">
+                    <div class="cat-icon"><i class="fas fa-spray-can"></i></div>
+                    <h3 data-en="Colin & Glass Liquid" data-mr="कॉलिन आणि काच क्लिनर">Colin & Glass Liquid</h3>
+                    <span data-en="Streak-Free Cleaners" data-mr="चमकदार काच क्लिनर">Streak-Free Cleaners</span>
+                </a>
+                <a href="#trending" class="category-card glass">
+                    <div class="cat-icon"><i class="fas fa-toilet"></i></div>
+                    <h3 data-en="Harpic & Toilet Care" data-mr="हार्पिक आणि टॉयलेट काळजी">Harpic & Toilet Care</h3>
+                    <span data-en="Deep Disinfectants" data-mr="डीप डिस्इन्फेक्टंट">Deep Disinfectants</span>
+                </a>
+                <a href="#best-selling" class="category-card glass">
+                    <div class="cat-icon"><i class="fas fa-wind"></i></div>
+                    <h3 data-en="Odonil & Frescos" data-mr="ओडोनिल आणि फ्रेशनेर">Odonil & Frescos</h3>
+                    <span data-en="Air & Room Fresheners" data-mr="रुम एअर फ्रेशनेर">Air & Room Fresheners</span>
+                </a>
+                <a href="#best-selling" class="category-card glass">
+                    <div class="cat-icon"><i class="fas fa-broom"></i></div>
+                    <h3 data-en="Mop & Floor Duster" data-mr="मॉप आणि फ्लोअर डस्टर">Mop & Floor Duster</h3>
+                    <span data-en="Spin Mops & Microfiber" data-mr="स्पिन मॉप आणि कापड">Spin Mops & Microfiber</span>
+                </a>
+                <a href="#best-selling" class="category-card glass">
+                    <div class="cat-icon"><i class="fas fa-scroll"></i></div>
+                    <h3 data-en="Paper Napkins" data-mr="पेपर नॅपकिन">Paper Napkins</h3>
+                    <span data-en="Soft Tissues & Wipes" data-mr="मऊ टिशू पेपर">Soft Tissues & Wipes</span>
+                </a>
+                <a href="#trending" class="category-card glass">
+                    <div class="cat-icon"><i class="fas fa-notes-medical"></i></div>
+                    <h3 data-en="Paracetamol & Gloves" data-mr="पॅरासिटामॉल आणि हातमोजे">Paracetamol & Gloves</h3>
+                    <span data-en="Medical Essentials" data-mr="वैद्यकीय आवश्यक वस्तू">Medical Essentials</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products Grid -->
+    <section class="trending-section" id="trending">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title" data-en="Featured Inventory" data-mr="खास उत्पादने">Featured Inventory</span>
+                <h2 class="section-title" data-en="Popular Cleaning & Healthcare Products" data-mr="लोकप्रिय स्वच्छता आणि आरोग्य उत्पादने">Popular Cleaning & Healthcare Products</h2>
+            </div>
+
+            <div class="product-grid">
+                <!-- Product 1: Phenyl -->
+                <article class="product-card glass">
+                    <div class="card-badge">-29%</div>
+                    <button class="wishlist-btn" title="Add to Wishlist" data-id="p1"><i class="far fa-heart"></i></button>
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=400&q=80" alt="White Disinfectant Phenyl 5L Bottle" />
+                    </div>
+                    <div class="product-info">
+                        <span class="category-tag" data-en="Disinfectants & Phenyl" data-mr="फिनईल आणि डिस्इन्फेक्टंट">Disinfectants & Phenyl</span>
+                        <h3 class="product-title" data-en="White Disinfectant Phenyl Liquid 5 Litre Can" data-mr="व्हाईट डिस्इन्फेक्टंट फिनईल लिक्विड ५ लिटर कॅन">White Disinfectant Phenyl Liquid 5 Litre Can</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                            <span>(210)</span>
+                        </div>
+                        <div class="price-box">
+                            <span class="mrp">₹350</span>
+                            <span class="current-price">₹249</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="tel:9822311640" class="btn btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Call to Order" data-mr="कॉल करून ऑर्डर करा">Call to Order</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2: Harpic Toilet Cleaner Bottle -->
+                <article class="product-card glass">
+                    <div class="card-badge">-21%</div>
+                    <button class="wishlist-btn" title="Add to Wishlist" data-id="p2"><i class="far fa-heart"></i></button>
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=400&q=80" alt="Harpic Disinfectant Toilet Cleaner Bottle" />
+                    </div>
+                    <div class="product-info">
+                        <span class="category-tag" data-en="Toilet & Bathroom Care" data-mr="टॉयलेट आणि बाथरुम स्वच्छता">Toilet & Bathroom Care</span>
+                        <h3 class="product-title" data-en="Harpic Disinfectant Toilet Cleaner Liquid 1 Litre" data-mr="हार्पिक डिस्इन्फेक्टंट टॉयलेट क्लिनर लिक्विड १ लिटर">Harpic Disinfectant Toilet Cleaner Liquid 1 Litre</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(480)</span>
+                        </div>
+                        <div class="price-box">
+                            <span class="mrp">₹240</span>
+                            <span class="current-price">₹189</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="tel:9822311640" class="btn btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Call to Order" data-mr="कॉल करून ऑर्डर करा">Call to Order</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3: Antibacterial Liquid Handwash Pump Bottle -->
+                <article class="product-card glass">
+                    <div class="card-badge">-20%</div>
+                    <button class="wishlist-btn" title="Add to Wishlist" data-id="p3"><i class="far fa-heart"></i></button>
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=400&q=80" alt="Antibacterial Liquid Handwash Pump Bottle" />
+                    </div>
+                    <div class="product-info">
+                        <span class="category-tag" data-en="Handwash & Soap" data-mr="हँडवॉश आणि साबण">Handwash & Soap</span>
+                        <h3 class="product-title" data-en="Antibacterial Liquid Handwash Pump 500ml" data-mr="अँटीबॅक्टेरियल लिक्विड हँडवॉश पंप ५०० मिली">Antibacterial Liquid Handwash Pump 500ml</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <span>(155)</span>
+                        </div>
+                        <div class="price-box">
+                            <span class="mrp">₹150</span>
+                            <span class="current-price">₹119</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="tel:9822311640" class="btn btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Call to Order" data-mr="कॉल करून ऑर्डर करा">Call to Order</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4: Colin Glass Cleaner Spray Bottle -->
+                <article class="product-card glass">
+                    <div class="card-badge">-20%</div>
+                    <button class="wishlist-btn" title="Add to Wishlist" data-id="p4"><i class="far fa-heart"></i></button>
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=400&q=80" alt="Colin Glass Cleaner Spray Bottle" />
+                    </div>
+                    <div class="product-info">
+                        <span class="category-tag" data-en="Glass & Surface Cleaners" data-mr="ग्लास आणि सरफेस क्लिनर">Glass & Surface Cleaners</span>
+                        <h3 class="product-title" data-en="Colin Glass & Household Surface Cleaner Spray 500ml" data-mr="कॉलिन ग्लास आणि सर्फेस क्लिनर स्प्रे ५०० मिली">Colin Glass & Household Surface Cleaner Spray 500ml</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span>(340)</span>
+                        </div>
+                        <div class="price-box">
+                            <span class="mrp">₹125</span>
+                            <span class="current-price">₹99</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="tel:9822311640" class="btn btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Call to Order" data-mr="कॉल करून ऑर्डर करा">Call to Order</span></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best-Selling Products (Horizontal Scroll) -->
+    <section class="best-selling-section" id="best-selling">
+        <div class="container">
+            <div class="section-header-flex">
+                <div>
+                    <span class="sub-title" data-en="Top Daily Essentials" data-mr="दैनंदिन आवश्यक वस्तू">Top Daily Essentials</span>
+                    <h2 class="section-title" data-en="More Popular Items & Supplies" data-mr="अधिक लोकप्रिय वस्तू आणि साहित्य">More Popular Items & Supplies</h2>
+                </div>
+                <div class="scroll-controls">
+                    <button id="scrollLeftBtn" aria-label="Scroll Left"><i class="fas fa-chevron-left"></i></button>
+                    <button id="scrollRightBtn" aria-label="Scroll Right"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="horizontal-scroll" id="bestSellingScroll">
+                <div class="best-card glass">
+                    <img src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=200&q=80" alt="Armos Frescos Spray" />
+                    <div class="best-info">
+                        <h4 data-en="Armos Frescos Room Air Freshener Spray 300ml" data-mr="आर्मोस फ्रेशकोस रूम एअर फ्रेशनेर स्प्रे ३०० मिली">Armos Frescos Room Air Freshener Spray 300ml</h4>
+                        <div class="price-box"><span class="current-price">₹175</span></div>
+                        <a href="tel:9822311640" class="btn btn-sm btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Order" data-mr="ऑर्डर">Order</span></a>
+                    </div>
+                </div>
+
+                <div class="best-card glass">
+                    <img src="https://images.unsplash.com/photo-1584556812952-905ffd0c611a?auto=format&fit=crop&w=200&q=80" alt="Paper Napkins Box" />
+                    <div class="best-info">
+                        <h4 data-en="Soft Tissue Paper Napkins Box Pack (100 Pcs)" data-mr="पेपर नॅपकिन टिश्यू बॉक्स (१०० नग)">Soft Tissue Paper Napkins Box Pack (100 Pcs)</h4>
+                        <div class="price-box"><span class="current-price">₹89</span></div>
+                        <a href="tel:9822311640" class="btn btn-sm btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Order" data-mr="ऑर्डर">Order</span></a>
+                    </div>
+                </div>
+
+                <div class="best-card glass">
+                    <img src="https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=200&q=80" alt="Urinal Deodorizer Screen Pads" />
+                    <div class="best-info">
+                        <h4 data-en="Urinal Screens Deodorizer Pads (Pack of 4)" data-mr="युरिनल स्क्रीन डिओडोरायझर पॅड्स (४ चा पॅक)">Urinal Screens Deodorizer Pads (Pack of 4)</h4>
+                        <div class="price-box"><span class="current-price">₹220</span></div>
+                        <a href="tel:9822311640" class="btn btn-sm btn-primary"><i class="fas fa-phone-alt"></i> <span data-en="Order" data-mr="ऑर्डर">Order</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner / Leadership Authority Section -->
+    <section class="owner-section" id="owner">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title" data-en="Leadership & Vision" data-mr="नेतृत्व आणि ध्येय">Leadership & Vision</span>
+                <h2 class="section-title" data-en="Meet Our Owner & Founder" data-mr="संस्थापक व मालकांचा परिचय">Meet Our Owner & Founder</h2>
+            </div>
+
+            <div class="owner-card glass">
+                <div class="owner-image-wrapper">
+                    <div class="owner-img-box">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Naresh Deshmukh – Owner of Naresh Enterprises" id="ownerPhotoImg" />
+                    </div>
+                    <div class="owner-badge">
+                        <i class="fas fa-user-check"></i>
+                        <span data-en="Verified Business Owner" data-mr="प्रमाणित व्यवसाय मालक">Verified Business Owner</span>
+                    </div>
+                </div>
+
+                <div class="owner-content">
+                    <div class="owner-quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <h3 class="owner-name">Naresh Deshmukh</h3>
+                    <span class="owner-title" data-en="Founder & Managing Director, Naresh Enterprises" data-mr="संस्थापक आणि व्यवस्थापकीय संचालक, नरेश एंटरप्रायझेस">Founder & Managing Director, Naresh Enterprises</span>
+                    <span class="owner-location"><i class="fas fa-location-dot"></i> Nanded, Maharashtra</span>
+
+                    <p class="owner-message" data-en="&quot;Welcome to Naresh Enterprises. Since our founding in Nanded, our commitment has been to deliver 100% genuine cleaning chemicals, phenyl, hygiene supplies, and essential healthcare products at honest wholesale prices to every home, school, hospital, and business in Nanded.&quot;" data-mr="&quot;नरेश एंटरप्रायझेस मध्ये आपले सहर्ष स्वागत आहे. नांदेड मधील सर्व घरे, रुग्णालये, शाळा व संस्थांना उत्तम दरात अस्सल फिनईल, अ‍ॅसिड, हँडवॉश आणि स्वच्छता साहित्य पुरवणे हे आमचे मुख्य ध्येय आहे.&quot;">
+                        "Welcome to Naresh Enterprises. Since our founding in Nanded, our commitment has been to deliver 100% genuine cleaning chemicals, phenyl, hygiene supplies, and essential healthcare products at honest wholesale prices to every home, school, hospital, and business in Nanded."
+                    </p>
+
+                    <div class="owner-contact-footer">
+                        <a href="tel:9822311640" class="btn btn-primary"><i class="fas fa-phone-volume"></i> <span data-en="Direct Call: 9822311640" data-mr="थेट कॉल: ९८२२३११६४०">Direct Call: 9822311640</span></a>
+                        <span class="owner-address-note"><i class="fas fa-building"></i> H. No.34/B. No.31, L.H. Colony, Beside Govt. ITI, Nanded</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <div class="logo-icon"><i class="fas fa-pump-soap"></i></div>
+                        <div class="logo-text">Naresh <span>Enterprises</span></div>
+                    </a>
+                    <p data-en="Your trusted 24/7 partner in Nanded for Phenyl, Washing Acid, Handwash, Colin, Harpic, Mops, Odonil, Paracetamol, Gloves, and Floor Dusters." data-mr="नांदेडमधील फिनईल, अ‍ॅसिड, हँडवॉश, कॉलिन, हार्पिक, मॉप, ओडोनिल, पॅरासिटामॉल, हातमोजे आणि डस्टरचे विश्वासू केंद्र.">Your trusted 24/7 partner in Nanded for Phenyl, Washing Acid, Handwash, Colin, Harpic, Mops, Odonil, Paracetamol, Gloves, and Floor Dusters.</p>
+                    
+                    <div class="footer-contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> <strong><span data-en="Office:" data-mr="कार्यालय:">Office:</span></strong> H. No.34/B. No.31, L.H. Colony, Beside Govt. ITI, Nanded</p>
+                        <p><i class="fas fa-phone-alt"></i> <strong><span data-en="Mobile:" data-mr="मोबाईल:">Mobile:</span></strong> <a href="tel:9822311640">9822311640</a>, <a href="tel:70203176065">70203176065</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-en="Quick Links" data-mr="क्विक लिंक्स">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Naresh Enterprises. All Rights Reserved.</p>
+
+                <div class="developer-credit">
+                    <span><i class="fas fa-code"></i> <span data-en="Developed by" data-mr="वेबसाईट निर्मिती:">Developed by</span> <strong>Nexvora Tech Solutions Pune</strong></span>
+                    <span class="dev-phone"><i class="fas fa-phone-alt"></i> <a href="tel:7219290885">7219290885</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="js/script.js" defer></script>
+</body>
+</html>
