@@ -1,10 +1,6 @@
 // js/script.js – Naresh Enterprises Complete Interactivity Engine
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ---------- Wishlist State ----------
-  let wishlistCount = 0;
-  const wishlistCountEl = document.getElementById('wishlistCount');
-
   // ---------- Toast Notification Utility ----------
   function showToast(message, iconClass = 'fas fa-circle-check') {
     const container = document.getElementById('toastContainer');
@@ -266,28 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (accordionItems.length > 0) {
     accordionItems[0].classList.add('active');
   }
-
-  // ---------- Wishlist & Contact Form ----------
-  document.addEventListener('click', (e) => {
-    const wishBtn = e.target.closest('.wishlist-btn');
-    if (wishBtn) {
-      e.preventDefault();
-      wishBtn.classList.toggle('active');
-      const heartIcon = wishBtn.querySelector('i');
-
-      if (wishBtn.classList.contains('active')) {
-        heartIcon.className = 'fas fa-heart';
-        wishlistCount += 1;
-        showToast('Added item to your wishlist!', 'fas fa-heart');
-      } else {
-        heartIcon.className = 'far fa-heart';
-        wishlistCount = Math.max(0, wishlistCount - 1);
-        showToast('Removed item from your wishlist.', 'fas fa-heart-crack');
-      }
-
-      if (wishlistCountEl) wishlistCountEl.textContent = wishlistCount;
-    }
-  });
 
   // ---------- Contact Form Handling ----------
   const contactForm = document.getElementById('contactForm');
