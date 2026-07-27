@@ -1,4 +1,4 @@
-// js/script.js – Naresh Enterprises Complete Interactivity Engine
+// js/script.js â€“ Naresh Enterprises Complete Interactivity Engine
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Toast Notification Utility ----------
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    const toastMsg = lang === 'mr' ? 'वेबसाइटची भाषा मराठीवर बदलली!' : 'Language changed to English!';
+    const toastMsg = lang === 'mr' ? 'à¤µà¥‡à¤¬à¤¸à¤¾à¤‡à¤Ÿà¤šà¥€ à¤­à¤¾à¤·à¤¾ à¤®à¤°à¤¾à¤ à¥€à¤µà¤° à¤¬à¤¦à¤²à¤²à¥€!' : 'Language changed to English!';
     showToast(toastMsg, 'fas fa-globe');
   }
 
@@ -263,15 +263,6 @@ document.addEventListener('DOMContentLoaded', () => {
     accordionItems[0].classList.add('active');
   }
 
-  // ---------- Contact Form Handling ----------
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      showToast('Thank you! Your message has been sent to Naresh Enterprises. We will contact you shortly.', 'fas fa-paper-plane');
-      contactForm.reset();
-    });
-  }
 
   // ---------- Newsletter Submit ----------
   const newsletterForm = document.getElementById('newsletterForm');
@@ -299,6 +290,124 @@ document.addEventListener('DOMContentLoaded', () => {
 
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ---------- Scroll Reveal Observer ----------
+  const revealElements = document.querySelectorAll('.feature-card, .category-card, .product-card, .best-card');
+  revealElements.forEach(el => el.classList.add('reveal'));
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // ---------- Contact Form Validation ----------
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    const nameField = document.getElementById('contactName');
+    const phoneField = document.getElementById('contactPhone');
+    const messageField = document.getElementById('contactMessage');
+
+    const nameError = document.getElementById('nameError');
+    const phoneError = document.getElementById('phoneError');
+    const messageError = document.getElementById('messageError');
+
+    // Prevent non-numeric input for phone
+    phoneField.addEventListener('input', function(e) {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    const validateName = () => {
+      const val = nameField.value.trim();
+      const regex = /^[A-Za-z\s]+$/;
+      if (val.length < 3 || val.length > 50 || !regex.test(val)) {
+        nameError.textContent = 'Please enter a valid name using letters only.';
+        nameError.style.display = 'block';
+        nameField.style.borderColor = '#ef4444';
+        return false;
+      } else {
+        nameError.style.display = 'none';
+        nameField.style.borderColor = '';
+        return true;
+      }
+    };
+
+    const validatePhone = () => {
+      const val = phoneField.value.trim();
+      const regex = /^[0-9]{10}$/;
+      if (!regex.test(val)) {
+        phoneError.textContent = 'Please enter a valid 10-digit mobile number.';
+        phoneError.style.display = 'block';
+        phoneField.style.borderColor = '#ef4444';
+        return false;
+      } else {
+        phoneError.style.display = 'none';
+        phoneField.style.borderColor = '';
+        return true;
+      }
+    };
+
+    const validateMessage = () => {
+      const val = messageField.value.trim();
+      if (val.length < 10 || val.length > 500) {
+        messageError.textContent = 'Please enter your product requirement or message.';
+        messageError.style.display = 'block';
+        messageField.style.borderColor = '#ef4444';
+        return false;
+      } else {
+        messageError.style.display = 'none';
+        messageField.style.borderColor = '';
+        return true;
+      }
+    };
+
+    // Real-time validation events
+    [nameField, phoneField, messageField].forEach(field => {
+      field.addEventListener('blur', () => {
+        if (field === nameField) validateName();
+        if (field === phoneField) validatePhone();
+        if (field === messageField) validateMessage();
+      });
+      field.addEventListener('input', () => {
+        // Only re-validate on input if there is already an error shown
+        if (field === nameField && nameError.style.display === 'block') validateName();
+        if (field === phoneField && phoneError.style.display === 'block') validatePhone();
+        if (field === messageField && messageError.style.display === 'block') validateMessage();
+      });
+    });
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      const isNameValid = validateName();
+      const isPhoneValid = validatePhone();
+      const isMessageValid = validateMessage();
+
+      if (isNameValid && isPhoneValid && isMessageValid) {
+        // Form is valid
+        if (typeof showToast === 'function') {
+          showToast('Thank you! Your message has been sent to Naresh Enterprises. We will contact you shortly.', 'fas fa-paper-plane');
+        } else {
+          alert('Thank you! Your message has been submitted successfully.');
+        }
+        contactForm.reset();
+        
+        // Reset borders
+        nameField.style.borderColor = '';
+        phoneField.style.borderColor = '';
+        messageField.style.borderColor = '';
+      }
     });
   }
 
